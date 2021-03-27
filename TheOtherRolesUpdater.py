@@ -12,13 +12,26 @@ tag_name = x["tag_name"]
 # download latest zip
 url = "https://github.com/Eisbison/TheOtherRoles/releases/download/{0}/TheOtherRoles.zip".format(tag_name)
 r = requests.get(url)
-with open("TheOtherRoles.zip", 'wb') as f:
-    f.write(r.content)
+
+try:
+    with open("TheOtherRoles.zip", 'wb') as f:
+        print('downloading...')
+        f.write(r.content)
+except Exception:
+    pass
 
 # unzip
-with zipfile.ZipFile("TheOtherRoles.zip", 'r') as zip_ref:
-    zip_ref.extractall("")
+try:
+    with zipfile.ZipFile("TheOtherRoles.zip", 'r') as zip_ref:
+        print('extracting...')
+        zip_ref.extractall("")
+except Exception:
+    pass
 
 # delete zip
-if os.path.exists("TheOtherRoles.zip"):
-    os.remove("TheOtherRoles.zip")
+try:
+    if os.path.exists("TheOtherRoles.zip"):
+        print('removing ZIP...')
+        os.remove("TheOtherRoles.zip")
+except Exception:
+    pass
