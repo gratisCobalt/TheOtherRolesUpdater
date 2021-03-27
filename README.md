@@ -1,3 +1,5 @@
 # TheOtherRolesUpdater
-Updates The Other Roles Mod.
-(Needs to be placed in Mod Folder)
+The TheOtherRolesUpdater.py need to be in the OtherRoles Mod Folder!!
+
+# Requirements
+Python (https://www.python.org/downloads/)
